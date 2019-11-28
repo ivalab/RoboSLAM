@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RoboSLAM Research</title>
+    <link>https://ivalab.github.io/RoboSLAM/public/</link>
+    <description>Recent content on RoboSLAM Research</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 26 Nov 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ivalab.github.io/RoboSLAM/public/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>IVALab BioLocomotion Robots</title>
+      <link>https://ivalab.github.io/RoboSLAM/public/robots/</link>
+      <pubDate>Tue, 26 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivalab.github.io/RoboSLAM/public/robots/</guid>
+      <description>Our main robot for performing initial proof-of-concept runs using actual hardware is the Turtlebot. It is, perhaps, one of the more widely deployed wheeled, autonomous robot configurations around today, for indoor scenarios. Think of the Knightscope robot, Fetch, &amp;hellip;, though Boston Dynamics is making an effort to change that (as is Anybotics). To test out different hardware configurations, we have several that are instrumented in different ways. With stereo cameras, with depth sensors, with different compute platforms, from an Odroid Xu4, an Jetson TX2, and an Intel Celeron laptop, to an Intel i7 6th generation laptop.</description>
+    </item>
+    
+    <item>
+      <title>Good Features for SLAM</title>
+      <link>https://ivalab.github.io/RoboSLAM/public/research/goodfeats/</link>
+      <pubDate>Wed, 20 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivalab.github.io/RoboSLAM/public/research/goodfeats/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; SLAM is an overdetermined online estimation problem whose
+size grows with time, as new measurements are collected with each new
+image.  Most overdetermined problems can be converted to smaller sized
+overdetermined problems without suffering a loss in accuracy.  The
+question is: how can we determine what visual features to keep or to
+remove to preserve accuracy?  If we can answer that question, then we
+can start to bound the computational time of SLAM for real-time
+operation in large-scale and uncertain environments.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
