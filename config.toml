@@ -1,5 +1,5 @@
-baseurl = "https://ivalab.github.io/RoboSLAM/public"
-baseURL = "https://ivalab.github.io/RoboSLAM/public"
+baseurl = "https://ivalab.github.io/RoboSLAM/public/"
+baseURL = "https://ivalab.github.io/RoboSLAM/public/"
 title = "RoboSLAM Research"
 theme = "hugo-creative-portfolio-theme"
 languageCode = "en-us"
