@@ -1,3 +1,42 @@
-baseURL = "http://example.org/"
+baseurl = "https://ivalab.github.io/RoboSLAM/public"
+baseURL = "https://ivalab.github.io/RoboSLAM/public"
+title = "RoboSLAM Research"
+theme = "hugo-creative-portfolio-theme"
 languageCode = "en-us"
-title = "My New Hugo Site"
+defaultContentLanguage = "en-us"
+disqusShortname = ""
+googleAnalytics = ""
+
+[params]
+  style = "sea"
+  title = "IVALab:RoboSLAM"
+  description = "Research efforts related to closed-loop SLAM."
+  copyright = ""
+  support = "Research supported in part by National Science Foundation.  Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation."
+  sidebarAbout = [ "Research efforts related to simultaneous localization and mapping algorithms for real-time, closed-loop operation of autonomous robots." ]
+
+
+  [[params.grants]]
+  grantee = "NSF"
+  award = "1816138"
+  url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1816138&HistoricalAwards=false"
+
+  [[params.navlinks]]
+  name = "About"
+  url = "about/"
+  home = false
+
+  [[params.navlinks]]
+  name = "Robots"
+  url  = "robots/"
+  home = false
+
+  [[params.navlinks]]
+  name = "Research"
+  url  = "research/"
+  home = true
+
+  [params.social]
+  github  = "https://github.com/ivalab"
+  github2  = "https://github.com/ivaROS"
+  youtube = "https://www.youtube.com/channel/UCKQ7FxpjoK-1l3Bp2qXCiYw/"
