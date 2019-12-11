@@ -2,7 +2,7 @@
 showonlyimage = false
 draft = false
 image = ""
-date  = "2019-11-20"
+date  = "2018-10-20"
 title = "Good Feature Selection in BA-SLAM"
 +++
 
