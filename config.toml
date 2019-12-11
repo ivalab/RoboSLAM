@@ -21,6 +21,9 @@ googleAnalytics = ""
   award = "1816138"
   url = "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1816138&HistoricalAwards=false"
 
+  [[params.grants]]
+  grantee = "AFRL"
+
   [[params.navlinks]]
   name = "About"
   url = "about/"
