@@ -8,7 +8,7 @@ disqusShortname = ""
 googleAnalytics = ""
 
 [params]
-  style = "sea"
+  style = "ivalab"
   title = "IVALab:RoboSLAM"
   description = "Research efforts related to closed-loop SLAM."
   copyright = ""
