@@ -1,6 +1,6 @@
 +++
 showonlyimage = false
-draft = false
+draft = true
 image = ""
 date  = "2019-05-30"
 title = "Reflections on 5 Years of SLAM Research: 2014-2019"

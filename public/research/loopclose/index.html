@@ -2,7 +2,7 @@
 <html lang="en-us">
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Good Features for SLAM</title>
+<title>Online Binary Feature Learning for Loop Closure</title>
 <meta name="description" content="Research efforts related to closed-loop SLAM.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="all,follow">
@@ -139,47 +139,53 @@
   <div class="row">
     <div class="col-lg-8">
       <div class="content-column-content">
-         <h1>Good Features for SLAM</h1>
-         <p><strong>Abstract:</strong> SLAM is an overdetermined online estimation problem whose
-size grows with time, as new measurements are collected with each new
-image.  Most <em>highly</em> overdetermined problems can be converted to <em>smaller</em>
-overdetermined problems without suffering a loss in accuracy.  In that spirit,
-good features for SLAM investigates the question: How can we determine what
-visual features to keep or to remove to preserve accuracy?</p>
-<p>If we can answer the question above, then we can start to bound the
-computational time of SLAM for real-time operation in large-scale and uncertain
-environments.  Our first stab at this question was the 2015 CVPR paper &ldquo;Good
-Features to Track for Visual SLAM&rdquo; <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>
-Since this
-was our first foray into SLAM after having studied 3D reconstruction and
-point cloud processing, it was applied to an EKF-based SLAM method
-(1pt RANSAC EKF-SLAM). Filter-based, indirect SLAM algorithms are the easiest
-and quickest to get running. However, for robustness they typically require
-RANSAC or some other outlier rejection method.  Here, we employed the
-observability conditioning of the SLAM estimation problem as a filter for the
-RANSAC process.  Rather than randomly selecting points, the algorithm rank orders
-the points according to a conditioning score, then tests the resulting hypotheses.
-The scoring here is the observbility condition number associated to the minimum
-singular value of the observability matrix for the discrete time SLAM process.
-For more efficient calculations, a special version of the observability matrix is
-computed (the stripped observability matrix) whose rank and spectral properties
-agree with the observability matrix.
-The better the observability conditioning a point provides, the higher ranking
-it should have.  Selecting points based on this criteria provides a mechanism
-to be robust to error because observability conditioning is related to
-estimation convergence and error rejection.</p>
-<p>The approach was intended to provide proof-of-concept for the idea that the
-features being tracked could be actively managed and incorporated into pose
-estimation based on how they influence or condition the SLAM estimation.
-As a concept, there are many ways to implement the approach. Furthermore,
-it was meant to complement existing SLAM solutions.  Thus we anticipated that
-<em>good features</em> as a concept connected to solution conditioning would naturally
-translate to other SLAM solution.</p>
+         <h1>Online Binary Feature Learning for Loop Closure</h1>
+         <p><strong>Abstract:</strong>
+Loop closure is an essential module in long-term SLAM, as detecting and recognizing
+re-visited locations serves to bound localization drift and correct for
+geometric map distortions. It also provides a mechanism to recover from
+track loss. However, most methods employ offline learnt maps that cannot
+be customized to the feature space of new environments. This work explores
+a means to generate a loop closing map with online adaptive properties.</p>
+<p>Loop closure is what I would call the <em>the lost robot problem</em> (in the vein
+of the <em>kidnapped robot problem</em>).  No matter how much one wishes for
+a SLAM system to succeed, there are times when it just might fail. Usually,
+the local map process, if there is one, can prevent that by maintain a sense
+of location by recognizing and exploiting high-frequency or low time interval
+re-visits; imagine going to another room then back right away.  However, if the
+re-visit spans a long enough distance or time, then more global data
+re-association methods are needed; imagine going from home to
+work/school/grandma's/etc.  Welcome to <em>loop closure</em>.</p>
+<p>Loop closure is a tricky problem to solve. Make a mistake and it is over for your map;
+unless you have a really good way of detecting mistakes during map re-optimization.
+Miss a re-visit and you stay lost; that's certainly happened to me lots of times while driving!
+Robots just don't have the corrective strategies humans have, so we roboticists have
+to balance the trade-off between detection and error rate.  In our language, that's
+called a precision-recall trade-off.
+As someone whose background is control and dynamical systems,
+we thought it would benefit the loop-closure process if there were a way to incorporate
+motion insensitivity into the detection process (full credit goes to Guangcong for the initial idea during brainstorming sessions).
+Mathematically, the ideal outcome would be to have motion invariance, but
+theoeretically proving and then deriving an algorithm for this may or may not
+provide dividends per my colleague Stefano Soatto's findings.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>
+Sometimes the answer leads to an efficient algorithm, sometimes the
+computational complexity is too high.  However, insensitivity is often much
+easier to implement in practice and has nice computational or numerical
+properties arising from the fact that insensitivity is like an <em>approximate
+invariance</em> (my words).  In controls, we love insensitivity to nuisance
+signals. That idea fundamentally motivates and describes our SLAM research.</p>
+<p>Anyhow, back to the method at hand. One form of loop &hellip; MORE DETAILS TO COME &hellip;  <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>.</p>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>G. Zhang and P.A. Vela. &ldquo;Good Features to Track for Visual SLAM.&rdquo; <em>CVPR</em>, pp 1373-1382, 2015.  <a href="https://ieeexplore.ieee.org/document/7298743">Abstract</a>, IEEE <a href="https://ieeexplore.ieee.org/document/7298743">pdf</a>,Open Access <a href="https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Zhang_Good_Features_to_2015_CVPR_paper.pdf">pdf</a>. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>S. Soatto. &ldquo;Steps Towards a Theory of Visual Information: Active PErception, Signal-to-Symbol Conversion and the Interplay Between Sensing and Control.&rdquo; 2011-2017. <a href="https://arxiv.org/abs/1110.2053">arXiv</a>. He keeps changing the title and the document. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>S. Soatto and A. Chiuso. &ldquo;Visual Representations: Defining Properties and Deep Approximations.&rdquo; 2014-2016. <a href="https://arxiv.org/abs/1411.7676">arXiv</a>. Also a living manuscript. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>G. Zhang, M.J. Lilly, and P.A. Vela. &ldquo;Learning Binary Features Online from Motion Dynamics for Incremental Loop-Closure Detection and Place Recognition.&rdquo; <em>ICRA</em>, pp. 765-772, 2016.  <a href="https://ieeexplore.ieee.org/document/7487205">Abstract</a>. IEEE <a href="https://ieeexplore.ieee.org/document/7487205">pdf</a>. <a href="https://arxiv.org/abs/1601.03821">arXiv</a>. <em>Best Robotic Vision Paper Award Finalist</em>. <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>

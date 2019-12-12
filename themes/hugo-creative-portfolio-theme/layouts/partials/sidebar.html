@@ -22,7 +22,14 @@
 
     {{ partial "social_buttons_in_sidebar.html" . }}
 
-    <div class="support">
+  Select by Tags:<BR>
+  {{ range .Site.Taxonomies.tags }}
+    <a href="{{ .Page.Permalink }}"
+    style="padding:0px 5px 0px 5px">{{ .Page.Title}}</a>
+  {{ end }}
+  <a href="/BioLoco/public/research" style="padding:0px 5px 0px 5px">All</a>
+
+    <div class="support" style="padding-top:15px">
       <p class="credit">
         {{ with .Site.Params.support }}
           {{ . | safeHTML }} 
@@ -31,7 +38,19 @@
       <p class="support">
         <p class="credit">
       {{ range .Site.Params.grants }}
-        <a target="_blank" href="{{ absURL .url }}">{{ .grantee }} &#35;{{ .award }} </a><BR>
+        {{ if isset . "url" }}
+          {{ if isset . "award" }}
+            <a target="_blank" href="{{ absURL .url }}">{{ .grantee }} &#35;{{ .award }} </a><BR>
+          {{ else }}
+            <a target="_blank" href="{{ absURL .url }}">{{ .grantee }}</a><BR>
+          {{ end }}
+        {{else}}
+          {{ if isset . "award" }}
+            {{.grantee}}&#35;{{ .award }} <BR>
+          {{ else }}
+            {{.grantee}}
+          {{ end }}
+        {{end}}
       {{ end }}
         </p>
       </p>
@@ -45,4 +64,5 @@
       </p>
     </div>
   </div>
+
 </div>

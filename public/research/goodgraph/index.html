@@ -2,7 +2,7 @@
 <html lang="en-us">
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Good Features for SLAM</title>
+<title>Good Graph for SLAM</title>
 <meta name="description" content="Research efforts related to closed-loop SLAM.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="all,follow">
@@ -139,50 +139,15 @@
   <div class="row">
     <div class="col-lg-8">
       <div class="content-column-content">
-         <h1>Good Features for SLAM</h1>
-         <p><strong>Abstract:</strong> SLAM is an overdetermined online estimation problem whose
-size grows with time, as new measurements are collected with each new
-image.  Most <em>highly</em> overdetermined problems can be converted to <em>smaller</em>
-overdetermined problems without suffering a loss in accuracy.  In that spirit,
-good features for SLAM investigates the question: How can we determine what
-visual features to keep or to remove to preserve accuracy?</p>
-<p>If we can answer the question above, then we can start to bound the
-computational time of SLAM for real-time operation in large-scale and uncertain
-environments.  Our first stab at this question was the 2015 CVPR paper &ldquo;Good
-Features to Track for Visual SLAM&rdquo; <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>
-Since this
-was our first foray into SLAM after having studied 3D reconstruction and
-point cloud processing, it was applied to an EKF-based SLAM method
-(1pt RANSAC EKF-SLAM). Filter-based, indirect SLAM algorithms are the easiest
-and quickest to get running. However, for robustness they typically require
-RANSAC or some other outlier rejection method.  Here, we employed the
-observability conditioning of the SLAM estimation problem as a filter for the
-RANSAC process.  Rather than randomly selecting points, the algorithm rank orders
-the points according to a conditioning score, then tests the resulting hypotheses.
-The scoring here is the observbility condition number associated to the minimum
-singular value of the observability matrix for the discrete time SLAM process.
-For more efficient calculations, a special version of the observability matrix is
-computed (the stripped observability matrix) whose rank and spectral properties
-agree with the observability matrix.
-The better the observability conditioning a point provides, the higher ranking
-it should have.  Selecting points based on this criteria provides a mechanism
-to be robust to error because observability conditioning is related to
-estimation convergence and error rejection.</p>
-<p>The approach was intended to provide proof-of-concept for the idea that the
-features being tracked could be actively managed and incorporated into pose
-estimation based on how they influence or condition the SLAM estimation.
-As a concept, there are many ways to implement the approach. Furthermore,
-it was meant to complement existing SLAM solutions.  Thus we anticipated that
-<em>good features</em> as a concept connected to solution conditioning would naturally
-translate to other SLAM solution.</p>
-<section class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1" role="doc-endnote">
-<p>G. Zhang and P.A. Vela. &ldquo;Good Features to Track for Visual SLAM.&rdquo; <em>CVPR</em>, pp 1373-1382, 2015.  <a href="https://ieeexplore.ieee.org/document/7298743">Abstract</a>, IEEE <a href="https://ieeexplore.ieee.org/document/7298743">pdf</a>,Open Access <a href="https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Zhang_Good_Features_to_2015_CVPR_paper.pdf">pdf</a>. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</section>
+         <h1>Good Graph for SLAM</h1>
+         <p><strong>Abstract:</strong> Our <em>good features</em> investigation has mostly addressed the
+front-end component. This inquiry studies the back-end, local map optimization
+process of ORB-SLAM to actively manage its computational properties.
+<em>Good graph</em> describes a process for determining how large of a local map
+to use and how to select the camera poses from the larger global map.
+It improves the run-time properties of the back-end optimization while
+supporting improved localization for the front-end.</p>
+<p>More details soon.</p>
          
       </div>
     </div>

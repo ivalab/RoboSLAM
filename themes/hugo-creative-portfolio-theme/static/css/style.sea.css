@@ -50,6 +50,8 @@ section.background-secondary {
 .section-inverse .heading:after {
   background: #fff;
 }
+
+
 .italic {
   font-style: italic;
   font-family: "Georgia", "Times New Roman", Times, serif;
