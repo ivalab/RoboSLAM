@@ -3,22 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://ivalab.github.io/RoboSLAM/public/research/goodgraph/</loc>
-    <lastmod>2019-12-10T00:00:00+00:00</lastmod>
+    <loc>https://ivalab.github.io/RoboSLAM/public/tags/benchmark/</loc>
+    <lastmod>2020-05-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://ivalab.github.io/RoboSLAM/public/research/</loc>
-    <lastmod>2019-12-10T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://ivalab.github.io/RoboSLAM/public/</loc>
-    <lastmod>2019-12-10T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ivalab.github.io/RoboSLAM/public/research/clbench/</loc>
+    <lastmod>2020-05-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ivalab.github.io/RoboSLAM/public/tags/</loc>
+    <lastmod>2020-05-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://ivalab.github.io/RoboSLAM/public/research/gfmatch/</loc>
+    <lastmod>2019-12-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ivalab.github.io/RoboSLAM/public/tags/goodfeats/</loc>
+    <lastmod>2019-12-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ivalab.github.io/RoboSLAM/public/tags/map2frame/</loc>
     <lastmod>2019-12-05T00:00:00+00:00</lastmod>
   </url>
   
@@ -33,6 +53,11 @@
   </url>
   
   <url>
+    <loc>https://ivalab.github.io/RoboSLAM/public/research/benchmarking/</loc>
+    <lastmod>2019-05-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ivalab.github.io/RoboSLAM/public/research/gfselect/</loc>
     <lastmod>2018-10-20T00:00:00+00:00</lastmod>
   </url>
@@ -40,6 +65,11 @@
   <url>
     <loc>https://ivalab.github.io/RoboSLAM/public/research/oomc/</loc>
     <lastmod>2016-11-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ivalab.github.io/RoboSLAM/public/tags/loopclose/</loc>
+    <lastmod>2016-05-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -58,10 +88,6 @@
   
   <url>
     <loc>https://ivalab.github.io/RoboSLAM/public/about/</loc>
-  </url>
-  
-  <url>
-    <loc>https://ivalab.github.io/RoboSLAM/public/tags/</loc>
   </url>
   
 </urlset>

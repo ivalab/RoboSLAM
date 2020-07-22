@@ -2,7 +2,7 @@
 <html lang="en-us">
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>IVALab RoboSLAM Research</title>
+<title>SLAM Benchmarks: Closed Loop</title>
 <meta name="description" content="Research efforts related to closed-loop SLAM.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="all,follow">
@@ -28,8 +28,6 @@
 
 <link href="https://ivalab.github.io/RoboSLAM/public/css/custom.css" rel="stylesheet">
 <link rel="shortcut icon" href="https://ivalab.github.io/RoboSLAM/public/img/favicon.png">
-
-  <link href="https://ivalab.github.io/RoboSLAM/public/about/index.xml" rel="alternate" type="application/rss+xml" title="RoboSLAM Research" />
 
 
 </head>
@@ -153,68 +151,31 @@
   <div class="row">
     <div class="col-lg-8">
       <div class="content-column-content">
-         <h1>IVALab RoboSLAM Research</h1>
-         <p>Our research is in SLAM for Robotics is geared towards establishing
-accurate, real-time realization of SLAM systems. We are interested
-in achieving accurate SLAM estimates during online pose estimation
-and map building. So far, our focus has been on the pose estimation
-(or localization) part of SLAM and not on the map building. Pose
-estimation is critical when navigating unknown environments since
-these same estimates are required for feedback trajectory control
-of the mobile robot. A poor pose estimate will only get worse under
-feedback, thus it is important to have the best possible estimate
-within a reasonable time (relative to the control feedback rate).
-Nevertheless, we believe that the ideas supporting rapid and robust pose
-estimation will translate to map building.</p>
-<p>Key to our work has been the notion of provable approximations. SLAM
-can run faster if measurements are thrown out, however success and
-performance will vary based on which are kept and which are not.
-Using tools from the numerical optimization and numerical methods community,
-we believe it is possible to actively keep some measurements and
-ignore others when estimating pose during SLAM, without impacting
-performance. If possible to achieve, then it will be possible to
-enhance the runtime of slow but accurate SLAM methods in a way
-that provides positive benefite during controlled trajectory
-tracking through unknown environments.  Current evidence indicates
-that our <em>good features</em> approach will indeed support such an outcome.
-The main tool from the numerical optimization and numerical methods community
-is that of <em>submodularity</em>, greedy optimization algorithms exploiting
-submodularity, and proven near-optimality outcomes associated to these
-algorithms. The work is a nice blend of control theory and approximation
-theory in support of efficient optimization algorithms.</p>
-<p>We believe that the idea behind the work is quite general and can be applied
-in many parts of the SLAM pipeline where there are data-induced computational
-bottlenecks. In bundle-adjustment based SLAM methods, the problem size grows
-with time, so active mechanisms to curate the measurements are needed
-to preserve real-time operation. Both the front-end and back-end components
-suffer from this problem, thus we have embarked on a journey to better
-understand just how many components could be enhanced, how they could be
-enhanced, and how general the concept is relative to existing SLAM solutions.
-Our intent is to complement these solutions be leveraging their strengths
-and addressing their computational weaknesses, but just enough that they
-can function for mobile robot deployments and provide strong, high performance
-solutions that do not degrade in the closed-loop. A consequence of the
-nature of our investigation is that a lot of this work will use the
-<em>good features</em> descriptor in it, or some variant thereof, as we
-explore SLAM from many angles, but with the same lens.</p>
-<h3 id="investigators-involved">Investigators Involved</h3>
-<ul>
-<li><a href="http://pvela.gatech.edu">Patricio A. Vela</a></li>
-</ul>
-<h4 id="collaborators-current-and-former">Collaborators (Current and Former)</h4>
-<p>Former:</p>
-<ul>
-<li><a href="http://dcsl.gatech.edu/tsiotras.html">Panos Tsiotras</a></li>
-</ul>
-<h3 id="former-investigators">Former Investigators</h3>
-<ul>
-<li>Wenkai Ye (<a href="https://cn.linkedin.com/in/wenkai-ye-21b61a9b">Linkedin</a>)</li>
-<li>Guangcong Zhang
-(<a href="https://www.linkedin.com/in/gczhang?trk=people-guest_profile-result-card_result-card_full-click">Linkedin</a>)</li>
-<li><a href="https://sites.google.com/site/zhaoyipu/home">Yi-Pu Zhao</a>
-(<a href="https://www.linkedin.com/in/yipuzhao">Linkedin</a>)</li>
-</ul>
-
+         <h1>SLAM Benchmarks: Closed Loop</h1>
+         <p><strong>Abstract:</strong> SLAM has long been envisioned as a means to assist
+robots performing navigation tasks in unknown environments.  Yet,
+benchmarking for SLAM most often uses open-loop data sets due for
+reproducibility. Given that open-loop and closed-loop task performance
+measures may not align, establishing a means to use SLAM in the
+closed-loop for benchmarking is an important next step in algorithm
+development. A ROS/Gazebo environment for SLAM benchmarking has been
+created and open sourced. Several stereo visual-inertial implementations
+are tested and compared. The Good Feature SLAM approach provides
+competitive and robust closed-loop trajectory tracking in unknown
+environments and without external absolute position measurements.</p>
+<p>Description coming soon. <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Y. Zhao, J.S. Smith, S.H. Karumanchi, and P.A. Vela. &ldquo;Closed-Loop
+Benchmarking of Stereo Visual-Inertial SLAM Systems: Understanding the
+Impact of Drift and Latency on Tracking Accuracy&rdquo; <em>ICRA</em>, 2020.
+<a href="https://arxiv.org/abs/2003.01317">arXiv</a>. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+         
       </div>
     </div>
   </div>

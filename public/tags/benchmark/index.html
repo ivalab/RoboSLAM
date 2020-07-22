@@ -2,7 +2,7 @@
 <html lang="en-us">
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Researches</title>
+<title>Benchmark</title>
 <meta name="description" content="Research efforts related to closed-loop SLAM.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="all,follow">
@@ -29,7 +29,7 @@
 <link href="https://ivalab.github.io/RoboSLAM/public/css/custom.css" rel="stylesheet">
 <link rel="shortcut icon" href="https://ivalab.github.io/RoboSLAM/public/img/favicon.png">
 
-  <link href="https://ivalab.github.io/RoboSLAM/public/research/index.xml" rel="alternate" type="application/rss+xml" title="RoboSLAM Research" />
+  <link href="https://ivalab.github.io/RoboSLAM/public/tags/benchmark/index.xml" rel="alternate" type="application/rss+xml" title="RoboSLAM Research" />
 
 
 </head>
@@ -191,68 +191,6 @@ environments and without external absolute position measurements.</p>
             <div class="box-masonry">
               
                 
-                  <a href="https://ivalab.github.io/RoboSLAM/public/research/gfmatch/" title="" class="box-masonry-image with-hover-overlay with-hover-icon">
-                
-                <img src="https://ivalab.github.io/RoboSLAM/public/imgs/GFmatch/Summary_EuRoC_rmse.png" alt="" class="img-responsive">
-                </a>
-              
-              
-                <div class="box-masonry-text">
-              
-                  <h4><a href="https://ivalab.github.io/RoboSLAM/public/research/gfmatch/">Good Feature Matching in BA-SLAM</a></h4>
-                  <div class="box-masonry-description">
-                    <p>
-                    
-                      <p><strong>Abstract:</strong> Active map-to-frame matching using SLAM condition scoring
-is proposed for balancing time cost and accuracy in indirect, BA-SLAM.
-Exploiting the submodularity property of pose optimization condition scoring
-leads to an algorithm for deciding when to employ map-to-frame matching,
-how many points to select, and how to prioritize the data association
-to best benefit pose estimation outcomes. When applied to ORB-SLAM,
-the algorithmic modification lowers run-time costs without impacting
-localization performance.</p>
-                    
-                    </p>
-                  </div>
-                </div>
-            </div>
-          </div>
-        
-          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 masonry-item">
-            <div class="box-masonry">
-              
-                
-                  <a href="https://ivalab.github.io/RoboSLAM/public/research/maphash/" title="" class="box-masonry-image with-hover-overlay with-hover-icon">
-                
-                <img src="https://ivalab.github.io/RoboSLAM/public/imgs/MapHash/overview.png" alt="" class="img-responsive">
-                </a>
-              
-              
-                <div class="box-masonry-text">
-              
-                  <h4><a href="https://ivalab.github.io/RoboSLAM/public/research/maphash/">Map-Hash for Fast Local-Map Queries</a></h4>
-                  <div class="box-masonry-description">
-                    <p>
-                    
-                      <p><strong>Abstract:</strong> Long-term, large-area SLAM performance is best when it
-is possible to match previously seen (but subsequently lost) map points
-when they re-enter the field-of-view and are visible once more.
-However, the time cost associated to matching against an ever increasing map
-undermines real-time performance. We combine hashing and condition scoring
-to arrive at a fast, bounded map-to-frame method we call <em>Map-Hash</em>.
-The value of <em>Map-Hash</em> is shown on a modified ORB-SLAM implementation
-relative to baseline ORB-SLAM.</p>
-                    
-                    </p>
-                  </div>
-                </div>
-            </div>
-          </div>
-        
-          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 masonry-item">
-            <div class="box-masonry">
-              
-                
                   <a href="https://ivalab.github.io/RoboSLAM/public/research/benchmarking/" title="" class="box-masonry-image with-hover-overlay with-hover-icon">
                 
                 <img src="https://ivalab.github.io/RoboSLAM/public/imgs/CharSLAM/train_all_quantatively.png" alt="" class="img-responsive">
@@ -276,126 +214,6 @@ On the <em>best possible</em> performance, we advocate for the use of <em>slo-mo
 processing, which provides practically no per-frame time constraint on
 the SLAM solver. The <em>slo-mo</em> results should be upper bounds on SLAM
 performance compared to the same method run with real-time constraints.</p>
-                    
-                    </p>
-                  </div>
-                </div>
-            </div>
-          </div>
-        
-          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 masonry-item">
-            <div class="box-masonry">
-              
-                
-                  <a href="https://ivalab.github.io/RoboSLAM/public/research/gfselect/" title="" class="box-masonry-image with-hover-overlay with-hover-icon">
-                
-                <img src="https://ivalab.github.io/RoboSLAM/public/imgs/GFsel/illu.png" alt="" class="img-responsive">
-                </a>
-              
-              
-                <div class="box-masonry-text">
-              
-                  <h4><a href="https://ivalab.github.io/RoboSLAM/public/research/gfselect/">Good Feature Selection in BA-SLAM</a></h4>
-                  <div class="box-masonry-description">
-                    <p>
-                    
-                      <p><strong>Abstract:</strong> SLAM condition scoring as a means to derive robust camera pose
-estimation methods for bundle-adjustment based SLAM are explored and shown
-to improve pose accuracy by 30% while increasing runtime by only 2%.
-The key idea is to perform <em>inlier selection</em> of tracked feature points so
-that the local pose optimization has strong conditioning. Combining this
-geometric conditioning with appearance-based match scoring leads to the
-stated outcomes.</p>
-                    
-                    </p>
-                  </div>
-                </div>
-            </div>
-          </div>
-        
-          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 masonry-item">
-            <div class="box-masonry">
-              
-                
-                  <a href="https://ivalab.github.io/RoboSLAM/public/research/oomc/" title="" class="box-masonry-image with-hover-overlay with-hover-icon">
-                
-                <img src="https://ivalab.github.io/RoboSLAM/public/imgs/OOMC/LongExp_Frame_6.png" alt="" class="img-responsive">
-                </a>
-              
-              
-                <div class="box-masonry-text">
-              
-                  <h4><a href="https://ivalab.github.io/RoboSLAM/public/research/oomc/">Optimal Observability and Maximal Cardinality</a></h4>
-                  <div class="box-masonry-description">
-                    <p>
-                    
-                      <p><strong>Abstract:</strong>
-Uses the <em>good features</em> for SLAM concept to propose a deterministic process
-for inlier estimation that matches RANSAC performance while having a more
-consistent time cost relative to RANSAC.<br>
-Measurement selection and outlier rejection use feature condition scoring
-and hypothesis testing. The outcomes suggest that randomized methods can be
-superceded by bounded or fixed time-cost deterministic methods based on
-feature point scoring.</p>
-                    
-                    </p>
-                  </div>
-                </div>
-            </div>
-          </div>
-        
-          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 masonry-item">
-            <div class="box-masonry">
-              
-                
-                  <a href="https://ivalab.github.io/RoboSLAM/public/research/loopclose/" title="" class="box-masonry-image with-hover-overlay with-hover-icon">
-                
-                <img src="https://ivalab.github.io/RoboSLAM/public/imgs/BFL_LC/ImTests_01.png" alt="" class="img-responsive">
-                </a>
-              
-              
-                <div class="box-masonry-text">
-              
-                  <h4><a href="https://ivalab.github.io/RoboSLAM/public/research/loopclose/">Online Binary Feature Learning for Loop Closure</a></h4>
-                  <div class="box-masonry-description">
-                    <p>
-                    
-                      <p><strong>Abstract:</strong>
-Loop closure is an essential module in long-term SLAM, as detecting and recognizing
-re-visited locations serves to bound localization drift and correct for
-geometric map distortions. It also provides a mechanism to recover from
-track loss. However, most methods employ offline learnt maps that cannot
-be customized to the feature space of new environments. This work explores
-a means to generate a loop closing map with online adaptive properties.</p>
-                    
-                    </p>
-                  </div>
-                </div>
-            </div>
-          </div>
-        
-          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 masonry-item">
-            <div class="box-masonry">
-              
-                
-                  <a href="https://ivalab.github.io/RoboSLAM/public/research/goodfeats/" title="" class="box-masonry-image with-hover-overlay with-hover-icon">
-                
-                <img src="https://ivalab.github.io/RoboSLAM/public/imgs/GFEKF/HeadDemo1.png" alt="" class="img-responsive">
-                </a>
-              
-              
-                <div class="box-masonry-text">
-              
-                  <h4><a href="https://ivalab.github.io/RoboSLAM/public/research/goodfeats/">Good Features for SLAM</a></h4>
-                  <div class="box-masonry-description">
-                    <p>
-                    
-                      <p><strong>Abstract:</strong> SLAM is an overdetermined online estimation problem whose
-size grows with time, as new measurements are collected with each new
-image.  Most <em>highly</em> overdetermined problems can be converted to <em>smaller</em>
-overdetermined problems without suffering a loss in accuracy.  In that spirit,
-good features for SLAM investigates the question: How can we determine what
-visual features to keep or to remove to preserve accuracy?</p>
                     
                     </p>
                   </div>

@@ -90,6 +90,18 @@
 
   Select by Tags:<BR>
   
+    <a href="https://ivalab.github.io/RoboSLAM/public/tags/benchmark/"
+    style="padding:0px 5px 0px 5px">Benchmark</a>
+  
+    <a href="https://ivalab.github.io/RoboSLAM/public/tags/goodfeats/"
+    style="padding:0px 5px 0px 5px">GoodFeats</a>
+  
+    <a href="https://ivalab.github.io/RoboSLAM/public/tags/loopclose/"
+    style="padding:0px 5px 0px 5px">LoopClose</a>
+  
+    <a href="https://ivalab.github.io/RoboSLAM/public/tags/map2frame/"
+    style="padding:0px 5px 0px 5px">Map2Frame</a>
+  
   <a href="https://ivalab.github.io/RoboSLAM/public/" style="padding:0px 5px 0px 5px">All</a>
 
     <div class="support" style="padding-top:15px">
@@ -147,45 +159,89 @@ geometric map distortions. It also provides a mechanism to recover from
 track loss. However, most methods employ offline learnt maps that cannot
 be customized to the feature space of new environments. This work explores
 a means to generate a loop closing map with online adaptive properties.</p>
+<h4 id="motivation-and-background">Motivation and Background</h4>
 <p>Loop closure is what I would call the <em>the lost robot problem</em> (in the vein
 of the <em>kidnapped robot problem</em>).  No matter how much one wishes for
-a SLAM system to succeed, there are times when it just might fail. Usually,
-the local map process, if there is one, can prevent that by maintain a sense
-of location by recognizing and exploiting high-frequency or low time interval
-re-visits; imagine going to another room then back right away.  However, if the
-re-visit spans a long enough distance or time, then more global data
+a SLAM system to succeed, there are times when it just might fail.
+The local map process, if there is one, usually prevent track loss by
+maintaining a sense of location. This sense of location is achieved by
+recognizing and exploiting high-frequency or low time interval
+re-visits; imagine going to another room then back right away.  Keeping
+a short term <em>memory</em> of recent observations to generate the data
+re-association will improve localization.
+However, if the re-visit spans a long enough distance or time, such that
+the <em>memory</em> component cannot succeed, then more global data
 re-association methods are needed; imagine going from home to
-work/school/grandma's/etc.  Welcome to <em>loop closure</em>.</p>
-<p>Loop closure is a tricky problem to solve. Make a mistake and it is over for your map;
-unless you have a really good way of detecting mistakes during map re-optimization.
-Miss a re-visit and you stay lost; that's certainly happened to me lots of times while driving!
-Robots just don't have the corrective strategies humans have, so we roboticists have
-to balance the trade-off between detection and error rate.  In our language, that's
-called a precision-recall trade-off.
-As someone whose background is control and dynamical systems,
-we thought it would benefit the loop-closure process if there were a way to incorporate
-motion insensitivity into the detection process (full credit goes to Guangcong for the initial idea during brainstorming sessions).
+work/school/grandma&rsquo;s/etc.  Welcome to <em>loop closure</em>.</p>
+<p>Loop closure is a tricky problem to solve. Make a mistake and it is over
+for your map; unless you have a really good way of detecting mistakes
+during map re-optimization.
+Miss a re-visit and you stay lost; that&rsquo;s certainly happened to me lots
+of times while driving!
+Robots just don&rsquo;t have the corrective strategies humans have, so we
+roboticists have to balance the trade-off between detection and error
+rate.  In our language, that&rsquo;s called a precision-recall trade-off.
+As someone whose background is control and dynamical systems and whose
+lab likes to think in these terms, we thought it would benefit the
+loop-closure process if there were a way to incorporate motion
+insensitivity into the detection process (full credit goes to Guangcong
+for the initial idea during brainstorming sessions).
 Mathematically, the ideal outcome would be to have motion invariance, but
 theoeretically proving and then deriving an algorithm for this may or may not
-provide dividends per my colleague Stefano Soatto's findings.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>
+provide dividends per my colleague Stefano Soatto&rsquo;s findings.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>
 Sometimes the answer leads to an efficient algorithm, sometimes the
-computational complexity is too high.  However, insensitivity is often much
-easier to implement in practice and has nice computational or numerical
-properties arising from the fact that insensitivity is like an <em>approximate
-invariance</em> (my words).  In controls, we love insensitivity to nuisance
-signals. That idea fundamentally motivates and describes our SLAM research.</p>
-<p>Anyhow, back to the method at hand. One form of loop &hellip; MORE DETAILS TO COME &hellip;  <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>.</p>
+computational complexity is too high.  More importantly, insensitivity
+is often much easier to implement in practice and has nice computational
+or numerical properties arising from the fact that insensitivity is like
+an <em>approximate invariance</em> (my words).  In controls, we love
+insensitivity to nuisance signals. Unlike invariance, insensitivity can
+be dialed up or down. Furthermore, there is usually a computational
+relationship with insensitivity level, which means that both can be
+modulated together to identify the best operating point across these two
+factors.  That idea fundamentally motivates and describes our SLAM
+research.</p>
+<h4 id="learning-descriptors-for-loop-closure">Learning Descriptors for Loop-Closure</h4>
+<p>The loop-closure solution builds from ideas found in the IBuiLD <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>
+loop closure implementation, as well as from empirically-adaptive
+descriptors like BOLD <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>.  Whereas BOLD aims for affine invariance of
+the binary descriptor by masking out bit coordinates sensitive to affine
+transformations, we mask out the ones that are sensitive across frames
+(i.e., temporal motion insensitivity).
+While BOLD is backed up by empirical evidence for its design, we focused
+on establishing core properties of the masked descriptors in order to
+confirm that the necessary topological properties of the masked Hamming
+space supported the data association needs of loop closure.  In this
+case, that meant <em>descriptor distances</em> had the right properties and
+behaviors as binary coordinates were masked out. The final result led to
+a method with decent loop-closure performance.<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> Though others have
+surpassed this, this technique had pretty strong performance at the
+time. We are currently working on a method that incorporates additional
+forms of insensitivity and a more efficient querying structure to arrive
+at an efficient, online method with very high precision at 100% recall
+for common benchmark loop closure data sets.</p>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>S. Soatto. &ldquo;Steps Towards a Theory of Visual Information: Active PErception, Signal-to-Symbol Conversion and the Interplay Between Sensing and Control.&rdquo; 2011-2017. <a href="https://arxiv.org/abs/1110.2053">arXiv</a>. He keeps changing the title and the document. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>S. Soatto. &ldquo;Steps Towards a Theory of Visual Information: Active
+Perception, Signal-to-Symbol Conversion and the Interplay Between
+Sensing and Control.&rdquo; 2011-2017.
+<a href="https://arxiv.org/abs/1110.2053">arXiv</a>. He keeps changing the title
+and the document. :-) <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
 <p>S. Soatto and A. Chiuso. &ldquo;Visual Representations: Defining Properties and Deep Approximations.&rdquo; 2014-2016. <a href="https://arxiv.org/abs/1411.7676">arXiv</a>. Also a living manuscript. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
-<p>G. Zhang, M.J. Lilly, and P.A. Vela. &ldquo;Learning Binary Features Online from Motion Dynamics for Incremental Loop-Closure Detection and Place Recognition.&rdquo; <em>ICRA</em>, pp. 765-772, 2016.  <a href="https://ieeexplore.ieee.org/document/7487205">Abstract</a>. IEEE <a href="https://ieeexplore.ieee.org/document/7487205">pdf</a>. <a href="https://arxiv.org/abs/1601.03821">arXiv</a>. <em>Best Robotic Vision Paper Award Finalist</em>. <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>S. Khan and D. Wollherr. &ldquo;IBuILD: Incremental Bag of Binary Words
+for Appearance Based  Loop  Closure  Detection.&rdquo; <em>ICRA</em>, pp 5441-5447, 2015. <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>V. Balntas, L. Tang, and K. Mikolajczyk. &ldquo;BOLD - Binary Online
+learned Descriptor  for  Efficient  Image  Matching. <em>CVPR</em>, pp 2367-2375, 2015. <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5" role="doc-endnote">
+<p>G. Zhang, M.J. Lilly, and P.A. Vela. &ldquo;Learning Binary Features Online from Motion Dynamics for Incremental Loop-Closure Detection and Place Recognition.&rdquo; <em>ICRA</em>, pp. 765-772, 2016.  <a href="https://ieeexplore.ieee.org/document/7487205">Abstract</a>. IEEE <a href="https://ieeexplore.ieee.org/document/7487205">pdf</a>. <a href="https://arxiv.org/abs/1601.03821">arXiv</a>. <em>Best Robotic Vision Paper Award Finalist</em>. <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>

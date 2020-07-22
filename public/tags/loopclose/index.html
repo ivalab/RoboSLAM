@@ -2,7 +2,7 @@
 <html lang="en-us">
 <head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>IVALab RoboSLAM Research</title>
+<title>LoopClose</title>
 <meta name="description" content="Research efforts related to closed-loop SLAM.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="all,follow">
@@ -29,7 +29,7 @@
 <link href="https://ivalab.github.io/RoboSLAM/public/css/custom.css" rel="stylesheet">
 <link rel="shortcut icon" href="https://ivalab.github.io/RoboSLAM/public/img/favicon.png">
 
-  <link href="https://ivalab.github.io/RoboSLAM/public/about/index.xml" rel="alternate" type="application/rss+xml" title="RoboSLAM Research" />
+  <link href="https://ivalab.github.io/RoboSLAM/public/tags/loopclose/index.xml" rel="alternate" type="application/rss+xml" title="RoboSLAM Research" />
 
 
 </head>
@@ -144,81 +144,49 @@
 </div>
 
               
-<div class="col-xs-12 col-sm-8 col-md-9 content-column white-background">
+  <div class="col-xs-12 col-sm-8 col-md-9 content-column">
   <div class="small-navbar visible-xs">
   <button type="button" data-toggle="offcanvas" class="btn btn-ghost pull-left"> <i class="fa fa-align-left"> </i>Menu</button>
   <h1 class="small-navbar-heading"><a href="https://ivalab.github.io/RoboSLAM/public/">RoboSLAM Research</a></h1>
 </div>
 
-  <div class="row">
-    <div class="col-lg-8">
-      <div class="content-column-content">
-         <h1>IVALab RoboSLAM Research</h1>
-         <p>Our research is in SLAM for Robotics is geared towards establishing
-accurate, real-time realization of SLAM systems. We are interested
-in achieving accurate SLAM estimates during online pose estimation
-and map building. So far, our focus has been on the pose estimation
-(or localization) part of SLAM and not on the map building. Pose
-estimation is critical when navigating unknown environments since
-these same estimates are required for feedback trajectory control
-of the mobile robot. A poor pose estimate will only get worse under
-feedback, thus it is important to have the best possible estimate
-within a reasonable time (relative to the control feedback rate).
-Nevertheless, we believe that the ideas supporting rapid and robust pose
-estimation will translate to map building.</p>
-<p>Key to our work has been the notion of provable approximations. SLAM
-can run faster if measurements are thrown out, however success and
-performance will vary based on which are kept and which are not.
-Using tools from the numerical optimization and numerical methods community,
-we believe it is possible to actively keep some measurements and
-ignore others when estimating pose during SLAM, without impacting
-performance. If possible to achieve, then it will be possible to
-enhance the runtime of slow but accurate SLAM methods in a way
-that provides positive benefite during controlled trajectory
-tracking through unknown environments.  Current evidence indicates
-that our <em>good features</em> approach will indeed support such an outcome.
-The main tool from the numerical optimization and numerical methods community
-is that of <em>submodularity</em>, greedy optimization algorithms exploiting
-submodularity, and proven near-optimality outcomes associated to these
-algorithms. The work is a nice blend of control theory and approximation
-theory in support of efficient optimization algorithms.</p>
-<p>We believe that the idea behind the work is quite general and can be applied
-in many parts of the SLAM pipeline where there are data-induced computational
-bottlenecks. In bundle-adjustment based SLAM methods, the problem size grows
-with time, so active mechanisms to curate the measurements are needed
-to preserve real-time operation. Both the front-end and back-end components
-suffer from this problem, thus we have embarked on a journey to better
-understand just how many components could be enhanced, how they could be
-enhanced, and how general the concept is relative to existing SLAM solutions.
-Our intent is to complement these solutions be leveraging their strengths
-and addressing their computational weaknesses, but just enough that they
-can function for mobile robot deployments and provide strong, high performance
-solutions that do not degrade in the closed-loop. A consequence of the
-nature of our investigation is that a lot of this work will use the
-<em>good features</em> descriptor in it, or some variant thereof, as we
-explore SLAM from many angles, but with the same lens.</p>
-<h3 id="investigators-involved">Investigators Involved</h3>
-<ul>
-<li><a href="http://pvela.gatech.edu">Patricio A. Vela</a></li>
-</ul>
-<h4 id="collaborators-current-and-former">Collaborators (Current and Former)</h4>
-<p>Former:</p>
-<ul>
-<li><a href="http://dcsl.gatech.edu/tsiotras.html">Panos Tsiotras</a></li>
-</ul>
-<h3 id="former-investigators">Former Investigators</h3>
-<ul>
-<li>Wenkai Ye (<a href="https://cn.linkedin.com/in/wenkai-ye-21b61a9b">Linkedin</a>)</li>
-<li>Guangcong Zhang
-(<a href="https://www.linkedin.com/in/gczhang?trk=people-guest_profile-result-card_result-card_full-click">Linkedin</a>)</li>
-<li><a href="https://sites.google.com/site/zhaoyipu/home">Yi-Pu Zhao</a>
-(<a href="https://www.linkedin.com/in/yipuzhao">Linkedin</a>)</li>
-</ul>
-
+    <div class="grid">
+      <div class="row">
+        
+          <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 masonry-item">
+            <div class="box-masonry">
+              
+                
+                  <a href="https://ivalab.github.io/RoboSLAM/public/research/loopclose/" title="" class="box-masonry-image with-hover-overlay with-hover-icon">
+                
+                <img src="https://ivalab.github.io/RoboSLAM/public/imgs/BFL_LC/ImTests_01.png" alt="" class="img-responsive">
+                </a>
+              
+              
+                <div class="box-masonry-text">
+              
+                  <h4><a href="https://ivalab.github.io/RoboSLAM/public/research/loopclose/">Online Binary Feature Learning for Loop Closure</a></h4>
+                  <div class="box-masonry-description">
+                    <p>
+                    
+                      <p><strong>Abstract:</strong>
+Loop closure is an essential module in long-term SLAM, as detecting and recognizing
+re-visited locations serves to bound localization drift and correct for
+geometric map distortions. It also provides a mechanism to recover from
+track loss. However, most methods employ offline learnt maps that cannot
+be customized to the feature space of new environments. This work explores
+a means to generate a loop closing map with online adaptive properties.</p>
+                    
+                    </p>
+                  </div>
+                </div>
+            </div>
+          </div>
+        
       </div>
     </div>
-  </div>
 </div>
+
 
           </div>
       </div>

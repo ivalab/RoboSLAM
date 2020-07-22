@@ -6,24 +6,28 @@
     <description>Recent content in Researches on RoboSLAM Research</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 29 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ivalab.github.io/RoboSLAM/public/research/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Good Graph for SLAM</title>
-      <link>https://ivalab.github.io/RoboSLAM/public/research/goodgraph/</link>
-      <pubDate>Tue, 10 Dec 2019 00:00:00 +0000</pubDate>
+      <title>SLAM Benchmarks: Closed Loop</title>
+      <link>https://ivalab.github.io/RoboSLAM/public/research/clbench/</link>
+      <pubDate>Fri, 29 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://ivalab.github.io/RoboSLAM/public/research/goodgraph/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; Our &lt;em&gt;good features&lt;/em&gt; investigation has mostly addressed the
-front-end component. This inquiry studies the back-end, local map optimization
-process of ORB-SLAM to actively manage its computational properties.
-&lt;em&gt;Good graph&lt;/em&gt; describes a process for determining how large of a local map
-to use and how to select the camera poses from the larger global map.
-It improves the run-time properties of the back-end optimization while
-supporting improved localization for the front-end.&lt;/p&gt;</description>
+      <guid>https://ivalab.github.io/RoboSLAM/public/research/clbench/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; SLAM has long been envisioned as a means to assist
+robots performing navigation tasks in unknown environments.  Yet,
+benchmarking for SLAM most often uses open-loop data sets due for
+reproducibility. Given that open-loop and closed-loop task performance
+measures may not align, establishing a means to use SLAM in the
+closed-loop for benchmarking is an important next step in algorithm
+development. A ROS/Gazebo environment for SLAM benchmarking has been
+created and open sourced. Several stereo visual-inertial implementations
+are tested and compared. The Good Feature SLAM approach provides
+competitive and robust closed-loop trajectory tracking in unknown
+environments and without external absolute position measurements.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -56,6 +60,25 @@ undermines real-time performance. We combine hashing and condition scoring
 to arrive at a fast, bounded map-to-frame method we call &lt;em&gt;Map-Hash&lt;/em&gt;.
 The value of &lt;em&gt;Map-Hash&lt;/em&gt; is shown on a modified ORB-SLAM implementation
 relative to baseline ORB-SLAM.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Characterizing SLAM Benchmarks and Performance: Open Loop</title>
+      <link>https://ivalab.github.io/RoboSLAM/public/research/benchmarking/</link>
+      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivalab.github.io/RoboSLAM/public/research/benchmarking/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; Systematic study of SLAM might benefit from a &lt;em&gt;design of
+experiments&lt;/em&gt; type of benchmarking approach, as well as means to gauge
+&lt;em&gt;best possible&lt;/em&gt; performance versus nominal performance. One way to
+better understand SLAM systems is if a good set of benchmarks could be
+established for quickly gauging general performance. Using decision
+trees dominant SLAM benchmark and SLAM performance factors can be easily
+determined. They can then inform algorithm development.
+On the &lt;em&gt;best possible&lt;/em&gt; performance, we advocate for the use of &lt;em&gt;slo-mo&lt;/em&gt;
+processing, which provides practically no per-frame time constraint on
+the SLAM solver. The &lt;em&gt;slo-mo&lt;/em&gt; results should be upper bounds on SLAM
+performance compared to the same method run with real-time constraints.&lt;/p&gt;</description>
     </item>
     
     <item>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Map2Frame on RoboSLAM Research</title>
+    <link>https://ivalab.github.io/RoboSLAM/public/tags/map2frame/</link>
+    <description>Recent content in Map2Frame on RoboSLAM Research</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 05 Dec 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ivalab.github.io/RoboSLAM/public/tags/map2frame/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Good Feature Matching in BA-SLAM</title>
+      <link>https://ivalab.github.io/RoboSLAM/public/research/gfmatch/</link>
+      <pubDate>Thu, 05 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivalab.github.io/RoboSLAM/public/research/gfmatch/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; Active map-to-frame matching using SLAM condition scoring
+is proposed for balancing time cost and accuracy in indirect, BA-SLAM.
+Exploiting the submodularity property of pose optimization condition scoring
+leads to an algorithm for deciding when to employ map-to-frame matching,
+how many points to select, and how to prioritize the data association
+to best benefit pose estimation outcomes. When applied to ORB-SLAM,
+the algorithmic modification lowers run-time costs without impacting
+localization performance.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Map-Hash for Fast Local-Map Queries</title>
+      <link>https://ivalab.github.io/RoboSLAM/public/research/maphash/</link>
+      <pubDate>Thu, 30 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivalab.github.io/RoboSLAM/public/research/maphash/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt; Long-term, large-area SLAM performance is best when it
+is possible to match previously seen (but subsequently lost) map points
+when they re-enter the field-of-view and are visible once more.
+However, the time cost associated to matching against an ever increasing map
+undermines real-time performance. We combine hashing and condition scoring
+to arrive at a fast, bounded map-to-frame method we call &lt;em&gt;Map-Hash&lt;/em&gt;.
+The value of &lt;em&gt;Map-Hash&lt;/em&gt; is shown on a modified ORB-SLAM implementation
+relative to baseline ORB-SLAM.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

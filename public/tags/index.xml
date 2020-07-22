@@ -6,9 +6,46 @@
     <description>Recent content in Tags on RoboSLAM Research</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Fri, 29 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ivalab.github.io/RoboSLAM/public/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Benchmark</title>
+      <link>https://ivalab.github.io/RoboSLAM/public/tags/benchmark/</link>
+      <pubDate>Fri, 29 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivalab.github.io/RoboSLAM/public/tags/benchmark/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GoodFeats</title>
+      <link>https://ivalab.github.io/RoboSLAM/public/tags/goodfeats/</link>
+      <pubDate>Thu, 05 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivalab.github.io/RoboSLAM/public/tags/goodfeats/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Map2Frame</title>
+      <link>https://ivalab.github.io/RoboSLAM/public/tags/map2frame/</link>
+      <pubDate>Thu, 05 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivalab.github.io/RoboSLAM/public/tags/map2frame/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>LoopClose</title>
+      <link>https://ivalab.github.io/RoboSLAM/public/tags/loopclose/</link>
+      <pubDate>Fri, 20 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivalab.github.io/RoboSLAM/public/tags/loopclose/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

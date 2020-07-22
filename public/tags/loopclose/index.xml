@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LoopClose on RoboSLAM Research</title>
+    <link>https://ivalab.github.io/RoboSLAM/public/tags/loopclose/</link>
+    <description>Recent content in LoopClose on RoboSLAM Research</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 20 May 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ivalab.github.io/RoboSLAM/public/tags/loopclose/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Online Binary Feature Learning for Loop Closure</title>
+      <link>https://ivalab.github.io/RoboSLAM/public/research/loopclose/</link>
+      <pubDate>Fri, 20 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivalab.github.io/RoboSLAM/public/research/loopclose/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt;
+Loop closure is an essential module in long-term SLAM, as detecting and recognizing
+re-visited locations serves to bound localization drift and correct for
+geometric map distortions. It also provides a mechanism to recover from
+track loss. However, most methods employ offline learnt maps that cannot
+be customized to the feature space of new environments. This work explores
+a means to generate a loop closing map with online adaptive properties.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
