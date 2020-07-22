@@ -1,9 +1,10 @@
 +++
 showonlyimage = false
-draft = false
+draft = true
 image = ""
-date  = "2019-12-10"
+date  = "2020-07-20"
 title = "Good Graph for SLAM"
+tags  = ["GoodGraph"]
 +++
 
 **Abstract:** Our _good features_ investigation has mostly addressed the
@@ -17,4 +18,4 @@ supporting improved localization for the front-end.
 
 More details soon.
 
-[^1]: Y. Zhao, J.S. Smith, and P.A. Vela. "Good Graph: Cost-Effective, Budget-Aware Bundle ADjustment in Visual SLAM." _in progress_, 2019.
+[^1]: Y. Zhao, J.S. Smith, and P.A. Vela. "Good Graph: Cost-Effective, Budget-Aware Bundle Adjustment in Visual SLAM." _in progress_, 2019.

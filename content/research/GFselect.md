@@ -1,9 +1,10 @@
 +++
 showonlyimage = false
 draft = false
-image = ""
+image = "imgs/GFsel/illu.png"
 date  = "2018-10-20"
 title = "Good Feature Selection in BA-SLAM"
+tags  = ["GoodFeats"]
 +++
 
 **Abstract:** SLAM condition scoring as a means to derive robust camera pose

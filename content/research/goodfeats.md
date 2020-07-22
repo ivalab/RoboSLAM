@@ -1,7 +1,7 @@
 +++
 showonlyimage = false
 draft = false
-image = ""
+image = "imgs/GFEKF/HeadDemo1.png"
 date  = "2015-11-20"
 title = "Good Features for SLAM"
 +++

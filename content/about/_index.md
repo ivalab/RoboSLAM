@@ -51,9 +51,6 @@ explore SLAM from many angles, but with the same lens.
 ### Investigators Involved
 
 - [Patricio A. Vela](http://pvela.gatech.edu)
-- [Yi-Pu Zhao](https://sites.google.com/site/zhaoyipu/home)
-  ([Linkedin](https://www.linkedin.com/in/yipuzhao))
-- Wenkai Ye ([Linkedin](https://cn.linkedin.com/in/wenkai-ye-21b61a9b))
 
 #### Collaborators (Current and Former)
 
@@ -64,5 +61,8 @@ Former:
 
 ### Former Investigators
 
+- Wenkai Ye ([Linkedin](https://cn.linkedin.com/in/wenkai-ye-21b61a9b))
 - Guangcong Zhang
   ([Linkedin](https://www.linkedin.com/in/gczhang?trk=people-guest_profile-result-card_result-card_full-click))
+- [Yi-Pu Zhao](https://sites.google.com/site/zhaoyipu/home)
+  ([Linkedin](https://www.linkedin.com/in/yipuzhao))

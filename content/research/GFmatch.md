@@ -1,9 +1,10 @@
 +++
 showonlyimage = false
 draft = false
-image = ""
+image = "imgs/GFmatch/Summary_EuRoC_rmse.png"
 date  = "2019-12-05"
 title = "Good Feature Matching in BA-SLAM"
+tags  = ["Map2Frame","GoodFeats"]
 +++
 
 **Abstract:** Active map-to-frame matching using SLAM condition scoring 
